@@ -58,7 +58,8 @@
             "@php artisan test"
         ],
         "post-install-cmd": [
-        "@php artisan migrate --force"
+        "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+        "@php artisan key:generate --ansi"
     ]
     },
     "extra": {
